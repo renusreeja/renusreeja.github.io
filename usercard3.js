@@ -3,21 +3,13 @@ let mahesholdinfo = {
     name: "Mahesh Babu",
     description: "Actor"
 }
-let maheshyounginfo = {
-    imgurl: "https://www.bollywoodshaadis.com/img/article-20221131722330981189000.jpg",
-    name: "Ghattamaneni Mahesh Babu",
-    description: "Hero"
-}
-let ismaheshold = true;
+
+
 let displayobject;
-let flipdata = function(){
-    if (ismaheshold == true){
-        displayobject = maheshyounginfo;
-        ismaheshold = false;
-    }else{
-        displayobject = mahesholdinfo;
-        ismaheshold = true;
-    }
+let getRandomUser = function(){
+    fetch("https://randomuser.me/api")
+    .then(response => response.json())
+    .then(data => console.log(data))
     document.getElementById("mahesh-img").src = displayobject.imgurl;
     document.getElementById("maheshbabu").innerHTML = displayobject.name;
     document.getElementById("mahesh-desc").innerHTML = displayobject.description;
