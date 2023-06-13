@@ -5,7 +5,11 @@ let mahesholdinfo = {
 }
 
 
-let displayobject;
+let displayobject = {
+    name: "",
+    imgurl: "",
+    description: ""
+};
 let getRandomUser = function(){
     fetch("https://randomuser.me/api")
     .then(response => response.json())
